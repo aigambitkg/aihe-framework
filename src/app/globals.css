@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 250, 250, 250;
+  --background-end-rgb: 255, 255, 255;
+  /* Updated colors to match AI Gambit logo */
+  --primary: 0, 128, 128; /* Teal/turquoise main color */
+  --secondary: 0, 110, 110; /* Slightly darker teal for secondary */
+  --accent: 255, 215, 0; /* Yellow accent from logo */
+  --success: 0, 200, 83;
+  --warning: 255, 187, 51;
+  --danger: 255, 76, 76;
+  --info: 0, 149, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 40, 40; /* Darker teal for dark mode background */
+    --background-end-rgb: 0, 20, 20; /* Even darker teal for dark mode gradient end */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
